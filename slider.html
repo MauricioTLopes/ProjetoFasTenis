@@ -1,0 +1,25 @@
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+	var slides=["#s1","#s2","#s3"];
+	slideatual=0;
+	slidemax=2;
+	tempo=10000;
+	
+	$(document).ready(function(){
+		$(slides[slideatual]).fadeTo(1000,1);
+		setInterval(troca,tempo);
+		function troca(){
+			$(slides[slideatual]).fadeTo(1000,0);
+			slideatual++;
+			if(slideatual > slidemax){
+				slideatual=0;
+			}
+			$(slides[slideatual]).fadeTo(1000,1);
+		}
+	});
+	
+</script>
+
+<img id="s1" src="slides/primeira.jpg"/>
+<img id="s2" src="slides/segunda.png"/>
+<img id="s3" src="slides/terceira.png"/>
